@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ffb3c6, #ffd1dc, #ffb3c6);
+            background-size: 400% 400%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            color: #6d3b47;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: floatAround 20s linear infinite;
+        }
+        
+        .shape-1 { 
+            width: 60px; height: 60px; 
+            background: #ff6b8b; 
+            top: 10%; left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape-2 { 
+            width: 80px; height: 80px; 
+            background: #ff8e9e; 
+            top: 70%; left: 80%;
+            animation-delay: -5s;
+        }
+        
+        .shape-3 { 
+            width: 40px; height: 40px; 
+            background: #ffb3c6; 
+            top: 30%; left: 70%;
+            animation-delay: -10s;
+        }
+        
+        .shape-4 { 
+            width: 100px; height: 100px; 
+            background: #ffd1dc; 
+            top: 80%; left: 20%;
+            animation-delay: -15s;
+        }
+        
+        .shape-5 { 
+            width: 50px; height: 50px; 
+            background: #ff9bb5; 
+            top: 50%; left: 5%;
+            animation-delay: -3s;
+        }
+        
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -50px) rotate(90deg); }
+            50% { transform: translate(-50px, -100px) rotate(180deg); }
+            75% { transform: translate(-100px, 50px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        .container {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+            max-width: 90%;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin-bottom: 80px; /* Increased from 60px to 80px */
+            padding-top: 30px; /* Increased from 20px to 30px */
+            color: #8b2e4a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: titlePulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+            50% { transform: scale(1.05); text-shadow: 3px 3px 8px rgba(139, 46, 74, 0.4); }
+        }
+        
+        .cake {
+            width: 180px;
+            height: 120px;
+            background: linear-gradient(to bottom, #8B4513, #A0522D);
+            border-radius: 8px;
+            margin: 40px auto 20px;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .cake:hover {
+            transform: scale(1.05);
+        }
+        
+        .cake-prompt {
+            text-align: center;
+            margin: 10px auto 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease 1s forwards;
+        }
+        
+        .cake-prompt-text {
+            display: inline-block;
+            color: #ff6b8b;
+            font-size: 14px;
+            font-style: italic;
+            padding: 5px 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .cake-layer1 {
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            right: 15px;
+            height: 35px;
+            background: linear-gradient(to bottom, #D2691E, #CD853F);
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cake-layer2 {
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            right: 30px;
+            height: 25px;
+            background: linear-gradient(to bottom, #F4A460, #DEB887);
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .frosting {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: #FFF8DC;
+            border-radius: 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .frosting::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 20px;
+            right: 20px;
+            height: 6px;
+            background: #FFF8DC;
+            border-radius: 50px;
+        }
+        
+        .frosting::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 40px;
+            right: 40px;
+            height: 4px;
+            background: #FFF8DC;
+            border-radius: 50px;
+        }
+        
+        .candle {
+            position: absolute;
+            width: 6px;
+            height: 45px;
+            background: linear-gradient(to bottom, #FFF, #FFEB3B);
+            top: -75px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px 3px 0 0;
+            z-index: 2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .flame {
+            position: absolute;
+            width: 12px;
+            height: 20px;
+            background: radial-gradient(circle, #FFFF00 0%, #FF6500 60%, #FF0000 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            top: -85px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 1.5s ease-in-out infinite alternate;
+            z-index: 3;
+            filter: blur(0.5px);
+        }
+        
+        @keyframes flicker {
+            0% { 
+                transform: translateX(-50%) scale(1) rotate(-2deg); 
+                opacity: 0.9;
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.1) rotate(1deg); 
+                opacity: 1;
+            }
+            100% { 
+                transform: translateX(-50%) scale(1.05) rotate(-1deg); 
+                opacity: 0.95;
+            }
+        }
+        
+        .hearts {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6b8b;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+        
+        .heart:before,
+        .heart:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: inherit;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        
+        .heart:after {
+            top: 0;
+            left: -10px;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes heartFloat {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        
+        .message {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        p {
+            margin: 12px 0;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        p:last-child {
+            font-weight: 600;
+            color: #8b2e4a;
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+            align-items: center;
+        }
+        
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #ff6b8b, #ff8e9e);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 139, 0.4);
+        }
+        
+        .action-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="floating-shape shape-5"></div>
+    </div>
+    
+    <div class="container">
+        <h1>Happy Anniversary, my Love</h1>
+        
+        <div class="cake" onclick="createConfetti()">
+            <div class="cake-layer2"></div>
+            <div class="cake-layer1"></div>
+            <div class="frosting"></div>
+            <div class="candle"></div>
+            <div class="flame"></div>
+        </div>
+        <div class="cake-prompt">
+            <span class="cake-prompt-text">Click the cake for the magic!</span>
+        </div>
+        
+        <div class="message">
+            <p>To the most amazing person in my life,</p>
+            <p>Every moment with you is a treasure. Here's to many more years of love and happiness together.</p>
+            <p>Forever yours,</p>
+            <p>Kenneth puge</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="action-btn" id="sweetMessageBtn">
+                <span class="btn-icon">💌</span>
+                Read My Heartfelt Message
+            </button>
+            <button class="action-btn" id="galleryBtn">
+                <span class="btn-icon">📸</span>
+                View Our 
+                Memories Together
+            </button>
+        </div>
+    </div>
+    
+    <div class="hearts" id="hearts"></div>
+    
+    <div id="sweetMessageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>My Dearest Love,</h2>
+            <div class="message-content">
+                <p>Happy anniversary to the most incredible woman I could ever dream of. As I sit and think about our time together, my heart feels so full it could burst, and it’s all because of you.</p>
+                <p>I was thinking today about the countless ways you show your love, and it always comes back to one thing: you constantly pour your entire heart into making me happy. I am in awe of you.</p>
+                <p>I think of you in the kitchen, creating magic not just with ingredients, but with love. Every meal you’ve ever cooked for me is so much more than food. It’s your time, your effort, and your desire to nurture me and see me smile. I taste your love in every single bite, and I hope you know it’s my favorite flavor in the entire world.</p>
+                <p>And my darling, I think of your generosity, and it truly humbles me. Even when you’re running low, your first thought is always, “What can I do for you?” or “What can I get for you?” You have this magical way of finding joy in my joy. The things you’ve bought me are wonderful, but they are just things. The real gift, the one that leaves me speechless, is the selfless, beautiful heart behind it. You give so freely, not because you have a lot, but because you are a lot—so much love, so much kindness, so much care. Please never feel you have to do that; your love is more than enough.</p>
+                <p>You have built our happiness brick by brick with your acts of service, your unwavering support, and your incredible, big heart. You make me feel so cherished, so seen, and so deeply loved every single day.</p>
+                <p>Which is why, with this full and grateful heart, I also need to say I’m sorry. I’m so sorry that we get caught up in arguments over the smallest things. Arguing with you feels wrong because you are the last person in the world I ever want to be at odds with. You are my safe place, my joy, and my home. I hate that our stubbornness sometimes clouds the beautiful connection we have. I am truly committed to doing better, to listening more, and to choosing our peace over being right.</p>
+                <p>Thank you for being my partner, my best friend, and my soulmate. I promise to cherish you, support you, and love you with all my heart for all the days of my life.</p>
+                <p>Thank you for loving me the way you do. Thank you for every meal, every sacrifice, every thoughtful gift, and for a love that is so active and generous. I am the luckiest person alive to be loved by you.</p>
+                <p>Happy Anniversary, my love.Here’s to us, and to many more years of learning, growing, and loving each other, even through our imperfections. I love you more than words can say.</p>
+                <p>Forever yours,<br>Kenneth</p>
+            </div>
+            <button class="back-btn">Back to Cake</button>
+        </div>
+    </div>
+
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Our Beautiful Memories</h2>
+            <div class="gallery-grid">
+                <!-- Add your photos here -->
+                <div class="gallery-item">
+                    <img src="gallery-item-1.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-2.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-3.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-4.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-5.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-6.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-7.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-8.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-9.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-10.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-11.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-12.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-13.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-14.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-15.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-16.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-17.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-18.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-19.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-20.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-21.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-22.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-23.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-24.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-25.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-26.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-27.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-28.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-29.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-30.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-31.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-32.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-33.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-34.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-35.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-36.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-37.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-38.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-39.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-40.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-41.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-42.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-43.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-44.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-45.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-46.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-47.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-48.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-49.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-50.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-51.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-52.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-53.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-54.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-55.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-56.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-57.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-58.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-59.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-60.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-61.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-62.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-63.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-64.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-65.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-66.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-67.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-68.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-69.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-70.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-71.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-72.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-73.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-74.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-75.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-76.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-77.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-78.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-79.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-80.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-81.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-82.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-83.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-84.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-85.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-86.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-87.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-88.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-89.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-90.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-91.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-92.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-93.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-item-94.jpg" alt="Our Memory 1" class="gallery-img">
+                </div>
+
+
+            
+
+            </div>
+            <button class="back-btn">Back to Cake</button>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+        
+        .close-btn:hover {
+            color: #ff6b8b;
+        }
+        
+        .back-btn {
+            display: block;
+            margin: 25px auto 0;
+            padding: 10px 25px;
+            background: linear-gradient(45deg, #ff6b8b, #ff8e9e);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 105, 140, 0.3);
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 140, 0.4);
+        }
+        
+        .back-btn:active {
+            transform: translateY(0);
+        }
+        
+        .message-content {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1;
+            background: #fff5f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+
+    <script>
+        // Modal functionality
+        const sweetMessageModal = document.getElementById('sweetMessageModal');
+        const galleryModal = document.getElementById('galleryModal');
+        const sweetMessageBtn = document.getElementById('sweetMessageBtn');
+        const galleryBtn = document.getElementById('galleryBtn');
+        const closeBtns = document.querySelectorAll('.close-btn');
+
+        // Open modals
+        sweetMessageBtn.addEventListener('click', () => toggleModal(sweetMessageModal));
+        galleryBtn.addEventListener('click', () => toggleModal(galleryModal));
+
+        // Close modals
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const modal = e.target.closest('.modal');
+                toggleModal(modal);
+            });
+        });
+        
+        // Back buttons
+        document.querySelectorAll('.back-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                toggleModal(modal);
+            });
+        });
+
+        // Close when clicking outside modal content
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                toggleModal(e.target);
+            }
+        });
+
+        function toggleModal(modal) {
+            modal.classList.toggle('active');
+            document.body.style.overflow = modal.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            
+            const posX = Math.random() * 100;
+            const delay = Math.random() * 5;
+            const duration = 4 + Math.random() * 3;
+            const size = Math.random() * 15 + 10;
+            
+            heart.style.left = `${posX}%`;
+            heart.style.animation = `heartFloat ${duration}s ease-out ${delay}s forwards`;
+            heart.style.width = `${size}px`;
+            heart.style.height = `${size}px`;
+            
+            const colors = ['#ff6b8b', '#ff8e9e', '#ffb3c6', '#ffd1dc', '#ff9bb5'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            heart.style.background = color;
+            
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, (duration + delay) * 1000);
+        }
+        
+        function createConfetti() {
+            const colors = ['#ff6b8b', '#ffeb3b', '#4caf50', '#2196f3', '#ff9800', '#e91e63', '#9c27b0'];
+            const shapes = ['square', 'circle', 'triangle'];
+            
+            // Create confetti pieces
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    
+                    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const size = Math.random() * 10 + 5;
+                    const duration = 3 + Math.random() * 2;
+                    
+                    // Random position at the top of the screen
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-20px';
+                    confetti.style.width = size + 'px';
+                    confetti.style.height = size + 'px';
+                    confetti.style.background = color;
+                    confetti.style.animation = `confettiFall ${duration}s linear forwards`;
+                    
+                    if (shape === 'circle') {
+                        confetti.style.borderRadius = '50%';
+                    } else if (shape === 'triangle') {
+                        confetti.style.width = '0';
+                        confetti.style.height = '0';
+                        confetti.style.background = 'transparent';
+                        confetti.style.borderLeft = `${size/2}px solid transparent`;
+                        confetti.style.borderRight = `${size/2}px solid transparent`;
+                        confetti.style.borderBottom = `${size}px solid ${color}`;
+                    }
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, duration * 1000);
+                }, Math.random() * 1000);
+            }
+            
+            // Add hearts when cake is clicked
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        }
+        
+        // Create initial hearts
+        for (let i = 0; i < 8; i++) {
+            setTimeout(createHeart, i * 500);
+        }
+        
+        // Continue creating hearts periodically
+        setInterval(createHeart, 800);
+        
+        // Gentle confetti continuously falling
+        function startGentleConfetti() {
+            createGentleConfetti();
+        }
+        
+        // Create gentle confetti every 1-3 seconds
+        setInterval(() => {
+            if (Math.random() > 0.3) { // 70% chance to create confetti
+                startGentleConfetti();
+            }
+        }, Math.random() * 2000 + 1000);
+        
+        // Initial gentle confetti
+        for (let i = 0; i < 5; i++) {
+            setTimeout(startGentleConfetti, i * 800);
+        }
+        
+        // Add general click effect for hearts
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.cake')) {
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(createHeart, i * 150);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
