@@ -916,26 +916,31 @@
         function createConfetti() {
             const colors = ['#ff6b8b', '#ffeb3b', '#4caf50', '#2196f3', '#ff9800', '#e91e63', '#9c27b0'];
             const shapes = ['square', 'circle', 'triangle'];
-            
-            // Create confetti pieces
+
+            // Get cake position
+            const cake = document.querySelector('.cake');
+            const cakeRect = cake.getBoundingClientRect();
+
+            // Create confetti pieces bursting from the cake
             for (let i = 0; i < 150; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('div');
                     confetti.classList.add('confetti');
-                    
+
                     const shape = shapes[Math.floor(Math.random() * shapes.length)];
                     const color = colors[Math.floor(Math.random() * colors.length)];
                     const size = Math.random() * 10 + 5;
                     const duration = 3 + Math.random() * 2;
-                    
-                    // Random position at the top of the screen
-                    confetti.style.left = Math.random() * 100 + 'vw';
-                    confetti.style.top = '-20px';
+
+                    // Position from the top of the cake, spread across its width
+                    const offsetX = Math.random() * cakeRect.width; // Spread across cake width
+                    confetti.style.left = (cakeRect.left + offsetX) + 'px';
+                    confetti.style.top = (cakeRect.top - 10) + 'px'; // Slightly above the cake
                     confetti.style.width = size + 'px';
                     confetti.style.height = size + 'px';
                     confetti.style.background = color;
                     confetti.style.animation = `confettiFall ${duration}s linear forwards`;
-                    
+
                     if (shape === 'circle') {
                         confetti.style.borderRadius = '50%';
                     } else if (shape === 'triangle') {
@@ -946,16 +951,16 @@
                         confetti.style.borderRight = `${size/2}px solid transparent`;
                         confetti.style.borderBottom = `${size}px solid ${color}`;
                     }
-                    
+
                     document.body.appendChild(confetti);
-                    
+
                     // Remove confetti after animation
                     setTimeout(() => {
                         confetti.remove();
                     }, duration * 1000);
                 }, Math.random() * 1000);
             }
-            
+
             // Add hearts when cake is clicked
             for (let i = 0; i < 15; i++) {
                 setTimeout(createHeart, i * 100);
@@ -971,6 +976,50 @@
         setInterval(createHeart, 800);
         
         // Gentle confetti continuously falling
+        function createGentleConfetti() {
+            const colors = ['#ff6b8b', '#ffeb3b', '#4caf50', '#2196f3', '#ff9800', '#e91e63', '#9c27b0'];
+            const shapes = ['square', 'circle', 'triangle'];
+
+            // Create fewer confetti pieces for gentle effect
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+
+                    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const size = Math.random() * 8 + 3;
+                    const duration = 5 + Math.random() * 3; // Slower fall
+
+                    // Random position at the top of the screen
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-20px';
+                    confetti.style.width = size + 'px';
+                    confetti.style.height = size + 'px';
+                    confetti.style.background = color;
+                    confetti.style.animation = `confettiFall ${duration}s linear forwards`;
+
+                    if (shape === 'circle') {
+                        confetti.style.borderRadius = '50%';
+                    } else if (shape === 'triangle') {
+                        confetti.style.width = '0';
+                        confetti.style.height = '0';
+                        confetti.style.background = 'transparent';
+                        confetti.style.borderLeft = `${size/2}px solid transparent`;
+                        confetti.style.borderRight = `${size/2}px solid transparent`;
+                        confetti.style.borderBottom = `${size}px solid ${color}`;
+                    }
+
+                    document.body.appendChild(confetti);
+
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, duration * 1000);
+                }, Math.random() * 2000); // Spread out over 2 seconds
+            }
+        }
+
         function startGentleConfetti() {
             createGentleConfetti();
         }
